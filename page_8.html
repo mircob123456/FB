@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide 8 - Estrutura de Custos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-teal: #0F7178;
+      --secondary-cyan: #46B3C6;
+      --accent-gold: #FDB813;
+      --text-dark: #293541;
+      --bg-light: #F4F9FA;
+      --card-bg: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .content-wrapper {
+      text-align: center;
+      padding: 40px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+      border: 1px solid rgba(15, 113, 120, 0.05);
+      max-width: 800px;
+      width: 90%;
+      margin-bottom: 80px;
+      /* Space for nav */
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-teal);
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    .metric-container {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .metric-card {
+      background: #f8fdfe;
+      padding: 2rem;
+      border-radius: 12px;
+      width: 100%;
+      border: 1px solid #e0f2f5;
+      transition: transform 0.3s ease;
+    }
+
+    .metric-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--secondary-cyan);
+    }
+
+    .metric-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-teal);
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-value.highlight {
+      color: var(--accent-gold);
+    }
+
+    .metric-label {
+      font-size: 1.2rem;
+      color: #6D7381;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .grid-row {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .grid-item {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    /* Navigation Styles */
+    .nav-container {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      background: var(--primary-teal);
+      padding: 12px 28px;
+      border-radius: 50px;
+      box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+      z-index: 1000;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-btn:hover {
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="content-wrapper">
+    <h1>Estrutura de Custos e F&B</h1>
+
+    <div class="metric-container">
+      <div class="metric-card">
+        <div class="metric-value">12,2€</div>
+        <div class="metric-label">Custos F&B por Pax/dia</div>
+      </div>
+
+      <div class="grid-row">
+        <div class="metric-card grid-item">
+          <div class="metric-value highlight">3 354 K</div>
+          <div class="metric-label">Gasto F&B</div>
+        </div>
+
+        <div class="metric-card grid-item">
+          <div class="metric-value">760 000</div>
+          <div class="metric-label">Refeições</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <a href="page_7.html" class="nav-btn">⬅ Prev</a>
+    <a href="fb_overview.html" class="nav-btn">🏠 Home</a>
+    <a href="page_9.html" class="nav-btn">Next ➡</a>
+  </div>
+
+</body>
+
+</html>

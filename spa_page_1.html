@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide 1 - Calendário Operacional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-teal: #0F7178;
+      --secondary-cyan: #46B3C6;
+      --accent-gold: #FDB813;
+      --text-dark: #293541;
+      --bg-light: #F4F9FA;
+      --card-bg: #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      /* Reduced width for single column */
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 60px;
+      /* Space for nav */
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-teal);
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .section-card {
+      background: var(--card-bg);
+      padding: 50px 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+      border: 1px solid rgba(15, 113, 120, 0.05);
+      width: 100%;
+      position: relative;
+    }
+
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: #6D7381;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 40px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Timeline Styles */
+    .dates-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      font-weight: 600;
+      color: var(--primary-teal);
+      font-size: 1.2rem;
+      padding: 0 20px;
+    }
+
+    .arrow-divider {
+      flex-grow: 1;
+      height: 3px;
+      background: linear-gradient(90deg, #cbd5e1 0%, var(--primary-teal) 50%, #cbd5e1 100%);
+      margin: 0 30px;
+      position: relative;
+      opacity: 0.5;
+    }
+
+    .highlight-box {
+      background: #eefbfd;
+      color: var(--primary-teal);
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-weight: 700;
+      text-align: center;
+      margin: 40px 0;
+      border: 2px solid var(--secondary-cyan);
+      font-size: 1.2rem;
+      box-shadow: 0 4px 15px rgba(15, 113, 120, 0.05);
+    }
+
+    .icon-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .icon-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 20px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #f1f5f9;
+      transition: transform 0.2s;
+    }
+
+    .icon-row:hover {
+      transform: translateX(5px);
+      border-color: var(--secondary-cyan);
+    }
+
+    .icon-circle {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary-teal);
+      flex-shrink: 0;
+    }
+
+    .info-text {
+      color: var(--text-dark);
+      font-size: 1.1rem;
+    }
+
+    /* Navigation Styles */
+    .nav-container {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      background: var(--primary-teal);
+      padding: 12px 28px;
+      border-radius: 50px;
+      box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+      z-index: 1000;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-btn:hover {
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Calendário Operacional</h1>
+
+  <div class="container">
+
+    <div class="section-card">
+      <div class="dates-row">
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <span style="font-size:2.5rem; margin-bottom:10px;">📅</span>
+          <span>Abertura</span>
+          <span style="color:#6D7381; font-weight:400; font-size:1rem;">20/03 (6ªf)</span>
+        </div>
+        <div class="arrow-divider"></div>
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <span style="font-size:2.5rem; margin-bottom:10px;">🏁</span>
+          <span>Encerramento</span>
+          <span style="color:#6D7381; font-weight:400; font-size:1rem;">08/11 (Dom)</span>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        Contratos: 06/03 a 30/11 (~9 meses)
+      </div>
+
+      <div class="icon-container">
+        <div class="icon-row">
+          <div class="icon-circle">⏱️</div>
+          <div class="info-text"><strong>Preparação:</strong> 9 dias úteis antes da abertura</div>
+        </div>
+
+        <div class="icon-row">
+          <div class="icon-circle">📚</div>
+          <div class="info-text"><strong>Formação:</strong> 3 Dias de Formação</div>
+        </div>
+
+        <div class="icon-row">
+          <div class="icon-circle">🧹</div>
+          <div class="info-text"><strong>Finalização:</strong> 3 dias úteis para limpeza</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <!-- Prev hidden on first slide -->
+    <a href="spa_overview.html" class="nav-btn">🏠 Home</a>
+    <a href="spa_page_2.html" class="nav-btn">Next ➡</a>
+  </div>
+
+</body>
+
+</html>

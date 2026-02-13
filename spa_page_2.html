@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 2 - Headcount</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --table-header-bg: #cbb57b;
+            /* Gold/Brown from image header */
+            --table-header-text: #FFFFFF;
+            --table-border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            width: 100%;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        th,
+        td {
+            padding: 12px 10px;
+            text-align: center;
+            border-bottom: 1px solid var(--table-border);
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--table-header-text);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            background-color: var(--card-bg);
+            z-index: 10;
+            border-right: 2px solid var(--table-border);
+            min-width: 200px;
+            font-weight: 600;
+        }
+
+        th:first-child {
+            background-color: var(--table-header-bg);
+            z-index: 20;
+        }
+
+        .total-row {
+            background-color: #fceea7;
+            /* Light gold background for SPA total row */
+            font-weight: 700;
+        }
+
+        .blue-val {
+            color: #0ea5e9;
+            font-weight: 600;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Headcount <span style="font-size:1rem; color:#94a3b8; vertical-align:middle;">(Spa)</span></h1>
+
+    <div class="container">
+
+        <div class="section-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>SPA</th>
+                        <th>Jan</th>
+                        <th>Fev</th>
+                        <th>Mar</th>
+                        <th>Abr</th>
+                        <th>Mai</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Ago</th>
+                        <th>Set</th>
+                        <th>Out</th>
+                        <th>Nov</th>
+                        <th>Dez</th>
+                </thead>
+                <tbody>
+                    <tr class="total-row">
+                        <td>SPA</td>
+                        <td>1,0</td>
+                        <td>1,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>5,0</td>
+                        <td>1,0</td>
+                    </tr>
+                    <tr>
+                        <td>Responsável do SPA</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Recepcionista</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="blue-val">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Terapeuta</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="blue-val">3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>3</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="spa_page_1.html" class="nav-btn">⬅ Prev</a>
+        <a href="spa_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="spa_page_3.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

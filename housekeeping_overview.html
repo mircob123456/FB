@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupiter Albufeira Hotel - HouseKeeping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            /* Light bluish tint */
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-teal);
+            width: 100%;
+            padding: 2.5rem 0;
+            box-shadow: 0 4px 12px rgba(15, 113, 120, 0.2);
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle wavy decoration possible here if needed, keeping it clean for now */
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p.subtitle {
+            margin-top: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(15, 113, 120, 0.15);
+            border-color: var(--secondary-cyan);
+        }
+
+        .card-preview {
+            height: 180px;
+            background: linear-gradient(135deg, #eefbfc 0%, #dff6f8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--secondary-cyan);
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .card-preview::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gold);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-preview::after {
+            transform: scaleX(1);
+        }
+
+        .card-content {
+            padding: 24px;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            line-height: 1.4;
+        }
+
+        .card-action {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(70, 179, 198, 0.1);
+            color: var(--primary-teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .card:hover .card-action {
+            background-color: var(--primary-teal);
+            color: white;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .back-btn:hover {
+            background: white;
+            color: var(--primary-teal);
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn">⬅ Voltar</a>
+        <div class="container">
+            <h1>Jupiter Albufeira Hotel</h1>
+            <p class="subtitle">Apresentação para Alojamento</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+            <a href="housekeeping_page_1.html" class="card">
+                <div class="card-preview">1</div>
+                <div class="card-content">
+                    <span class="card-title">Calendário Operacional</span>
+                    <div class="card-action">➜</div>
+                </div>
+            </a>
+            <a href="housekeeping_page_2.html" class="card">
+                <div class="card-preview">2</div>
+                <div class="card-content">
+                    <span class="card-title">Objetivos de Satisfação</span>
+                    <div class="card-action">➜</div>
+                </div>
+            </a>
+            <a href="housekeeping_page_3.html" class="card">
+                <div class="card-preview">3</div>
+                <div class="card-content">
+                    <span class="card-title">Headcount - Visão Geral</span>
+                    <div class="card-action">➜</div>
+                </div>
+            </a>
+            <a href="housekeeping_page_4.html" class="card">
+                <div class="card-preview">4</div>
+                <div class="card-content">
+                    <span class="card-title">Gastos e Margens</span>
+                    <div class="card-action">➜</div>
+                </div>
+            </a>
+            <a href="housekeeping_page_5.html" class="card">
+                <div class="card-preview">5</div>
+                <div class="card-content">
+                    <span class="card-title">Rácios e Produtividade</span>
+                    <div class="card-action">➜</div>
+                </div>
+            </a>
+            <a href="housekeeping_page_6.html" class="card">
+                <div class="card-preview">6</div>
+                <div class="card-content">
+                    <span class="card-title">Recrutamento</span>
+                    <div class="card-action">➜</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

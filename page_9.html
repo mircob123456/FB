@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 9 - Refeições</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --primary-color: #293541;
+            --accent-color: #007bff;
+            --bg-color: #f4f4f9;
+            --card-bg: #ffffff;
+            --header-bg: #0F7178;
+            /* Updated to Teal */
+            /* Approximate brown/gold from image header */
+            --header-text: #ffffff;
+            --highlight-bg: #EAFCFE;
+            /* Clean soft teal */
+        }
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            /* Wide table */
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+        }
+
+        h1 {
+            font-family: 'Hubot Sans', sans-serif;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: right;
+        }
+
+        th {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            font-family: 'Hubot Sans', sans-serif;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* First column alignment (Labels) */
+        td:first-child,
+        th:first-child {
+            text-align: left;
+            font-weight: 600;
+            min-width: 250px;
+        }
+
+        /* Highlight class for yellow cells */
+        .highlight {
+            background-color: var(--highlight-bg);
+            font-weight: bold;
+        }
+
+        .total-col {
+            font-weight: bold;
+        }
+
+        /* Navigation Styles - consistent with slides */
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 24px;
+            border-radius: 50px;
+            box-shadow: 0 6px 20px rgba(15, 113, 120, 0.4);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn.bar {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn.bar:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Refeições - Análise 2026</h1>
+
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>REFEIÇÕES</th>
+                    <th>Jan</th>
+                    <th>Fev</th>
+                    <th>Mar</th>
+                    <th>Abr</th>
+                    <th>Mai</th>
+                    <th>Jun</th>
+                    <th>Jul</th>
+                    <th>Ago</th>
+                    <th>Set</th>
+                    <th>Out</th>
+                    <th>Nov</th>
+                    <th>Dez</th>
+                    <th class="total-col">Ano</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Média de Refeições (Hóspedes *3)</td>
+                    <td></td>
+                    <td></td>
+                    <td>19 802</td>
+                    <td>95 523</td>
+                    <td>100 844</td>
+                    <td>107 418</td>
+                    <td>111 074</td>
+                    <td>116 296</td>
+                    <td>95 941</td>
+                    <td>103 049</td>
+                    <td>11 948</td>
+                    <td></td>
+                    <td class="total-col">761 895</td>
+                </tr>
+                <tr>
+                    <td>Média de Refeições Diárias / Dia do Mês (Hóspedes *3)</td>
+                    <td></td>
+                    <td></td>
+                    <td>1 800</td>
+                    <td class="highlight">3 184</td>
+                    <td class="highlight">3 253</td>
+                    <td class="highlight">3 581</td>
+                    <td class="highlight">3 583</td>
+                    <td class="highlight">3 751</td>
+                    <td class="highlight">3 198</td>
+                    <td class="highlight">3 324</td>
+                    <td>1 707</td>
+                    <td></td>
+                    <td class="highlight total-col">3 411</td>
+                </tr>
+                <tr>
+                    <td>Média de Refeições Turno</td>
+                    <td></td>
+                    <td></td>
+                    <td>600</td>
+                    <td class="highlight">1 061</td>
+                    <td class="highlight">1 084</td>
+                    <td class="highlight">1 194</td>
+                    <td class="highlight">1 194</td>
+                    <td class="highlight">1 250</td>
+                    <td class="highlight">1 066</td>
+                    <td class="highlight">1 108</td>
+                    <td>569</td>
+                    <td></td>
+                    <td class="highlight total-col">1 137</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="page_8.html" class="nav-btn bar">⬅ Prev</a>
+        <a href="fb_overview.html" class="nav-btn bar">🏠 Home</a>
+        <a href="page_10.html" class="nav-btn bar">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

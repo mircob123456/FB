@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 5 - Gastos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --danger-red: #ef4444;
+            --success-green: #22c55e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Summary Cards */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(15, 113, 120, 0.1);
+            text-align: center;
+            border-bottom: 4px solid var(--primary-teal);
+        }
+
+        .summary-title {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .summary-value {
+            font-size: 2rem;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .summary-sub {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: var(--primary-teal);
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #475569;
+        }
+
+        .detail-val {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .detail-percent {
+            color: #94a3b8;
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+
+        .insight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid var(--success-green);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #166534;
+        }
+
+        .strategy-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .strategy-list li {
+            margin-bottom: 10px;
+            color: #334155;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Análise de Gastos <span style="font-size:1rem; color:#94a3b8; vertical-align:middle;">(Spa)</span></h1>
+
+    <div class="container">
+
+        <!-- Summary Cards -->
+        <div class="summary-grid">
+            <div class="summary-card">
+                <div class="summary-title">Vendas Totais</div>
+                <div class="summary-value">206.742 €</div>
+            </div>
+            <div class="summary-card" style="border-bottom-color: var(--success-green);">
+                <div class="summary-title">Margem Dept.</div>
+                <div class="summary-value" style="color:var(--success-green);">81.182 €</div>
+                <div class="summary-sub" style="color:var(--success-green);">39%</div>
+            </div>
+            <div class="summary-card" style="border-bottom-color: var(--danger-red);">
+                <div class="summary-title">Gastos com Pessoal</div>
+                <div class="summary-value" style="color:var(--danger-red);">111.890 €</div>
+                <div class="summary-sub" style="color:var(--danger-red);">54%</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+
+            <!-- Column 1: Cost Structure -->
+            <div style="display:flex; flex-direction:column; gap:20px;">
+
+                <!-- Personnel Costs -->
+                <div class="section-card">
+                    <h2>1. Gastos com Pessoal (54%)</h2>
+                    <div class="detail-row">
+                        <span class="detail-label">Salários Fixos</span>
+                        <div>
+                            <span class="detail-val">90.070 €</span>
+                            <span class="detail-percent">(43,6%)</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Comissões (Variável)</span>
+                        <div>
+                            <span class="detail-val">21.722 €</span>
+                            <span class="detail-percent"></span>
+                        </div>
+                    </div>
+                    <div class="insight-box">
+                        <strong>Estratégia:</strong> O aumento de 108h para 127h de tratamentos maximiza o retorno sobre
+                        o custo fixo de 90k€.
+                    </div>
+                </div>
+
+                <!-- Strategic Conclusions -->
+                <div class="section-card">
+                    <h2>Conclusões Estratégicas</h2>
+                    <ul class="strategy-list">
+                        <li><strong>Foco na Produtividade:</strong> O lucro vem da eficiência das terapeutas, não de
+                            cortes em consumíveis (CPV 2%).</li>
+                        <li><strong>Incentivo ao Retalho:</strong> Baixo risco (comissões residuais) e margem elevada.
+                        </li>
+                        <li><strong>Sustentabilidade:</strong> Margem de 39% é excelente para operação All Inclusive.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Column 2: Other Costs & Profitability -->
+            <div style="display:flex; flex-direction:column; gap:20px;">
+
+                <!-- COGS & Others -->
+                <div class="section-card">
+                    <h2>2. Outros Custos</h2>
+                    <div class="detail-row">
+                        <span class="detail-label">Produtos (CPV)</span>
+                        <div>
+                            <span class="detail-val">4.199 €</span>
+                            <span class="detail-percent">(2%)</span>
+                        </div>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Outros Gastos Dept.</span>
+                        <div>
+                            <span class="detail-val">9.472 €</span>
+                            <span class="detail-percent">(5%)</span>
+                        </div>
+                    </div>
+
+                    <div style="margin-top:10px; padding-top:10px; border-top:1px dashed #e2e8f0;">
+                        <div class="detail-row" style="font-size:0.9rem;">
+                            <span class="detail-label">Lavandaria</span>
+                            <span class="detail-val">4.135 €</span>
+                        </div>
+                        <div class="detail-row" style="font-size:0.9rem;">
+                            <span class="detail-label">Diversos</span>
+                            <span class="detail-val">3.640 €</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profitability Analysis -->
+                <div class="section-card">
+                    <h2>3. Rentabilidade</h2>
+                    <p style="color:#475569; margin-top:0;">
+                        A margem final de <strong>39%</strong> é saudável.
+                    </p>
+                    <p style="color:#475569;">
+                        <strong>Sazonalidade:</strong><br>
+                        Nos meses de pico, a margem atinge <strong>50% - 54%</strong>. Nos meses fracos, os custos fixos
+                        de pessoal absorvem a receita.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="spa_page_4.html" class="nav-btn">⬅ Prev</a>
+        <a href="spa_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="spa_page_6.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

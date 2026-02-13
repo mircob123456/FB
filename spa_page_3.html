@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 3 - Satisfação do Hospede</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h2 {
+            color: var(--primary-teal);
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .stat-highlight {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f0fdf4;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #bbf7d0;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #166534;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #15803d;
+            font-weight: 600;
+        }
+
+        .comparison-box {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .comparison-item {
+            text-align: center;
+        }
+
+        .comparison-val {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .comparison-label {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .arrow-right {
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        p {
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .bullet-list li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+            color: #334155;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            color: var(--primary-teal);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Capacidade & Produtividade <span style="font-size:1rem; color:#94a3b8; vertical-align:middle;">(Spa)</span></h1>
+
+    <div class="container">
+
+        <div class="grid-container">
+
+            <!-- Card 1: Capacity Gain -->
+            <div class="section-card">
+                <h2>1. Ganho de Capacidade</h2>
+                <p>
+                    A alteração no modelo de trabalho, libertando as terapeutas das tarefas de receção, tem um impacto
+                    direto na disponibilidade para o que realmente gera receita.
+                </p>
+
+                <div class="comparison-box">
+                    <div class="comparison-item">
+                        <div class="comparison-val">108h</div>
+                        <div class="comparison-label">2025</div>
+                    </div>
+                    <div class="arrow-right">➜</div>
+                    <div class="comparison-item">
+                        <div class="comparison-val" style="color:var(--primary-teal);">127h</div>
+                        <div class="comparison-label">2026</div>
+                    </div>
+                </div>
+
+                <div class="stat-highlight">
+                    <span class="stat-label">Ganho Líquido</span>
+                    <span class="stat-value">+17,6%</span>
+                </div>
+
+                <p style="font-size: 0.9rem; color: #64748b;">
+                    Aumento na capacidade de resposta aos hóspedes, mesmo com a redução do horário de funcionamento.
+                </p>
+            </div>
+
+            <!-- Card 2: Therapist Efficiency -->
+            <div class="section-card">
+                <h2>2. Rentabilização</h2>
+                <p>
+                    A especialização das funções permite uma carga horária de tratamentos mais equilibrada e produtiva
+                    por colaboradora.
+                </p>
+
+                <ul class="bullet-list">
+                    <li>
+                        <strong>Otimização por Colaboradora:</strong><br>
+                        Em 2026, prevê-se que cada terapeuta dedique <span
+                            style="color:var(--primary-teal); font-weight:700;">31,75 horas</span> exclusivamente a
+                        tratamentos.
+                    </li>
+                    <li>
+                        <strong>Foco no Core Business:</strong><br>
+                        Eliminação de tempos mortos na receção.
+                    </li>
+                    <li>
+                        <strong>Disponibilidade para Receita:</strong><br>
+                        Foco total no serviço que representa 67,7% da faturação total:
+                        <div style="margin-top:5px; font-weight:700; color:var(--text-dark);">Tratamentos: 139.936,00 €
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="spa_page_2.html" class="nav-btn">⬅ Prev</a>
+        <a href="spa_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="spa_page_4.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

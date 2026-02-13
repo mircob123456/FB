@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide 2 - Procedimento de Férias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-teal: #0F7178;
+      --secondary-cyan: #46B3C6;
+      --accent-gold: #FDB813;
+      --text-dark: #293541;
+      --bg-light: #F4F9FA;
+      --card-bg: #FFFFFF;
+      --warning-bg: #fff3cd;
+      --warning-text: #856404;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-teal);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #64748b;
+      margin-bottom: 2rem;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(15, 113, 120, 0.05);
+      border-left: 5px solid var(--primary-teal);
+      height: 100%;
+    }
+
+    .card h2 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--primary-teal);
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .card strong {
+      color: var(--primary-teal);
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .nota-importante {
+      background: var(--warning-bg);
+      border: 1px dashed #ffeeba;
+      padding: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      color: var(--warning-text);
+      margin-top: 10px;
+    }
+
+    .motivos-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .motivo-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: left;
+    }
+
+    .motivo-box strong {
+      color: var(--secondary-cyan);
+      font-size: 1.1rem;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    th {
+      background-color: var(--primary-teal);
+      color: white;
+      padding: 15px;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    td {
+      padding: 15px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .mindset {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent-gold);
+    }
+
+    /* Navigation Styles */
+    .nav-container {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      background: var(--primary-teal);
+      padding: 12px 28px;
+      border-radius: 50px;
+      box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+      z-index: 1000;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-btn:hover {
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Procedimento de Férias e Descanso</h1>
+  <p class="subtitle"><strong>Compromisso EFR:</strong> Garantir o direito ao descanso e a organização das equipas.</p>
+
+  <div class="container">
+
+    <!-- Cards Section -->
+    <div class="content-grid">
+      <div class="card">
+        <strong>Portal Gali</strong>
+        <p>Todos os pedidos de férias e recuperações devem ser inseridos exclusivamente via portal digital.</p>
+      </div>
+      <div class="card">
+        <strong>Planeamento Anual</strong>
+        <p>O mapa de férias deve estar finalizado e fechado até ao dia <strong>31 de Março</strong>.</p>
+      </div>
+      <div class="card">
+        <strong>Fluxo de Aprovação</strong>
+        <p>Submetido pelo colaborador ➜ Validado pela Chefia Direta ➜ Monitorizado pela Direção.</p>
+      </div>
+    </div>
+
+    <div class="nota-importante">
+      ⚠️ ATENÇÃO: Não são permitidas férias entre Abril e Outubro, salvo exceções autorizadas pela Direção.
+    </div>
+
+    <!-- Motivos Section -->
+    <h2 style="font-family:'Montserrat', sans-serif; color:var(--primary-teal); margin-top:30px; text-align:center;">
+      Porquê este planeamento?</h2>
+    <div class="motivos-section">
+      <div class="motivo-box">
+        <strong>🛡️ Direito ao Descanso</strong><br>
+        Garantir que, quando está de folga, está mesmo desligado. O planeamento evita interrupções no seu tempo pessoal.
+      </div>
+      <div class="motivo-box">
+        <strong>🤝 Transparência e Justiça</strong><br>
+        A visão centralizada protege a equipa de sobrecargas súbitas e dá segurança na marcação das suas viagens.
+      </div>
+      <div class="motivo-box">
+        <strong>🚀 Autonomia da Chefia</strong><br>
+        As chefias têm a liberdade necessária para organizar o sucesso das suas secções em tempo útil.
+      </div>
+    </div>
+
+    <!-- Table Section -->
+    <h2 style="font-family:'Montserrat', sans-serif; color:var(--primary-teal); margin-top:40px;">Matriz de
+      Responsabilidades</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Ator</th>
+          <th>Responsabilidade Principal</th>
+          <th>Mindset</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Colaborador</strong></td>
+          <td>Inserir pedidos no sistema com antecedência.</td>
+          <td class="mindset">Autorresponsabilidade</td>
+        </tr>
+        <tr>
+          <td><strong>Chefia</strong></td>
+          <td>Validar pedidos, gerir escalas e fundamentar exceções.</td>
+          <td class="mindset">Liderança Protetora</td>
+        </tr>
+        <tr>
+          <td><strong>Direção</strong></td>
+          <td>Análise centralizada e aprovação de exceções críticas.</td>
+          <td class="mindset">Apoio a Chefias e Equipas</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:20px; font-size:0.9rem; color:#64748b; text-align:center; max-width:800px;">
+      <em>Alterações posteriores a validação de férias e recuperações requerem nova validação da Direção. <br>
+        Trabalho em folgas e horas extraordinárias são exceções validadas pelas CHEFIAS e DIREÇÃO por forma a proteger o
+        colaborador.</em>
+    </p>
+
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <a href="hr_page_1.html" class="nav-btn">⬅ Prev</a>
+    <a href="hr_overview.html" class="nav-btn">🏠 Home</a>
+    <a href="hr_page_3.html" class="nav-btn">Next ➡</a>
+  </div>
+
+</body>
+
+</html>

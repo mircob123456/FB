@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="--viewport-height: 6.95px;">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-teal: #0F7178;
+      --accent-gold: #FDB813;
+    }
+
+    body {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      background-image: url('https://picture-search.skywork.ai/aippt/image/sheet/2019503723898601472:17bd21b731114ace0a6d61277b38247f:0/c7a5e83e-8fb6-4204-b6ed-bcaa137b6533/2019503723898601472:17bd21b731114ace0a6d61277b38247f:0_page_4_inp_img_lama_refine.png');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transform: scale(1.0, 1.0);
+      transform-origin: top left;
+    }
+
+    .text-item {
+      position: absolute;
+      white-space: nowrap;
+    }
+
+    .image-item {
+      position: absolute;
+      object-fit: cover;
+    }
+
+    /* Navigation Styles */
+    .nav-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      background: var(--primary-teal);
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(15, 113, 120, 0.4);
+      z-index: 1000;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    .nav-btn.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="">
+  <div class="container" id="slide-container">
+    <div class="text-item title"
+      style="font-size: 50px; font-weight: 700; font-family: &#39;Noto Sans KR&#39;; line-height: 119%; color: #192833; left: 75px; top: 49px; width: 1004.30px">
+      Horas de Trabalho por Departamento</div>
+    <div class="text-item text"
+      style="font-size: 31px; font-weight: 700; font-family: &#39;Noto Sans KR&#39;; line-height: 124%; color: #192833; left: 75px; top: 205px; width: 136.40px">
+      Cozinha</div>
+    <div class="text-item text"
+      style="font-size: 31px; font-weight: 700; font-family: &#39;Noto Sans KR&#39;; line-height: 124%; color: #192833; left: 497px; top: 205px; width: 221.10px">
+      Restaurantes</div>
+    <div class="text-item text"
+      style="font-size: 31px; font-weight: 700; font-family: &#39;Noto Sans KR&#39;; line-height: 124%; color: #192833; left: 907px; top: 205px; width: 94.60px">
+      Bares</div>
+    <div class="text-item text"
+      style="font-size: 30px; font-weight: 400; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; color: #4F5F6B; left: 75px; top: 117px; width: 441.10px">
+      Época Alta (Abril - Outubro)</div>
+    <div class="text-item text"
+      style="font-size: 23px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 90px; top: 293px; width: 305.80px">
+      Abril - Junho: 476.8h/dia</div>
+    <div class="text-item text"
+      style="font-size: 23px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 90px; top: 360px; width: 361.90px">
+      Julho - Setembro: 516.8h/dia</div>
+    <div class="text-item text"
+      style="font-size: 23px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 90px; top: 423px; width: 246.40px">
+      Outubro: 511.2h/dia</div>
+    <div class="text-item text"
+      style="font-size: 23px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 114%; color: #192833; left: 513px; top: 286px; width: 297.00px">
+      Montechoro: 285.6h/dia</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 513px; top: 392px; width: 100.10px">
+      Alecrim</div>
+    <div class="text-item text"
+      style="font-size: 21px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 114%; color: #192833; left: 513px; top: 509px; width: 231.00px">
+      Taberna<br />Abril: 20.8h/dia<br />Maio-Out: 27.2h/dia</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 272px; width: 121.00px">
+      Bar Albar</div>
+    <div class="text-item text"
+      style="font-size: 22px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 301px; width: 195.80px">
+      Abril: 103.2h/dia</div>
+    <div class="text-item text"
+      style="font-size: 22px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 330px; width: 237.60px">
+      Jun-Out: 114.4h/dia</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 392px; width: 158.40px">
+      Rooftop Bar</div>
+    <div class="text-item text"
+      style="font-size: 22px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 421px; width: 223.30px">
+      Abr-Jun: 16.8h/dia</div>
+    <div class="text-item text"
+      style="font-size: 21px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 450px; width: 213.40px">
+      Jul-Out: 23.2h/dia</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 524px; width: 147.40px">
+      Bar Piscina</div>
+    <div class="text-item text"
+      style="font-size: 23px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 920px; top: 553px; width: 260.70px">
+      Pico Verão: 74.4h/dia</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-style: italic; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; text-align: center; color: #192833; left: 350px; top: 650px; width: 635.80px">
+      Nota: Período de 2 folgas semanais (5/7 presença)</div>
+    <div class="text-item text"
+      style="font-size: 22px; font-weight: 400; font-style: italic; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #4F5F6B; left: 513px; top: 314px; width: 278.30px">
+      (35.7 colaboradores/dia)</div>
+    <div class="text-item text"
+      style="font-size: 22px; font-weight: 400; font-family: &#39;Noto Sans KR&#39;; line-height: 134%; color: #192833; left: 513px; top: 419px; width: 242.00px">
+      Abril: 32.8h/dia<br />Maio-Out: 38.4h/dia</div>
+  </div>
+
+
+  <script data-sk-script-id="viewportHeightScript">
+    (function () {
+      var viewportHeight = window.top === window ? '1vh' : '6.95px';
+      document.documentElement.style.setProperty('--viewport-height', viewportHeight);
+
+      // Responsive Scaling Script
+      function scaleSlide() {
+        const container = document.getElementById('slide-container');
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const targetWidth = 1280;
+        const targetHeight = 720;
+
+        // Calculate scale based on width to fit
+        let scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+
+        // Apply scale
+        container.style.transform = `scale(${scale})`;
+
+        // Center - since transform origin is top left
+        const scaledWidth = targetWidth * scale;
+        const scaledHeight = targetHeight * scale;
+
+        const leftOffset = (windowWidth - scaledWidth) / 2;
+        const topOffset = (windowHeight - scaledHeight) / 2;
+
+        container.style.left = `${Math.max(0, leftOffset)}px`;
+        container.style.top = `${Math.max(0, topOffset)}px`;
+        container.style.position = 'absolute'; // Ensure absolute positioning for centering
+      }
+
+      window.addEventListener('resize', scaleSlide);
+      window.addEventListener('load', scaleSlide);
+      scaleSlide(); // Initial call
+    })();
+  </script>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <a href="page_3.html" class="nav-btn">⬅ Prev</a>
+    <a href="fb_overview.html" class="nav-btn">🏠 Home</a>
+    <a href="page_5.html" class="nav-btn">Next ➡</a>
+  </div>
+
+</body>
+
+</html>

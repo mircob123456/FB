@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 4 - Análise de Gastos e Margens</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --positive-green: #10b981;
+            --negative-red: #ef4444;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* KPI Cards */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border-top: 4px solid var(--primary-teal);
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .kpi-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .kpi-sub {
+            font-size: 0.85rem;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+
+        .text-green {
+            color: var(--positive-green);
+        }
+
+        .text-gold {
+            color: #b45309;
+        }
+
+        /* Darker gold for text */
+
+        /* Content Sections */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            width: 100%;
+        }
+
+        @media (min-width: 900px) {
+            .content-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            height: 100%;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--secondary-cyan);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        strong {
+            color: var(--text-dark);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            padding: 10px 12px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary-teal);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        td.val {
+            text-align: right;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid var(--positive-green);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .alert-box {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--negative-red);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Análise de Gastos e Margens</h1>
+
+    <div class="container">
+
+        <!-- KPIs -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-label">Faturação Total</div>
+                <div class="kpi-value">14.764.695 €</div>
+                <div class="kpi-sub">Projeção Anual</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Margem Dept.</div>
+                <div class="kpi-value text-green">85%</div>
+                <div class="kpi-sub">12.586.078 €</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Custo Pessoal</div>
+                <div class="kpi-value">9,5%</div>
+                <div class="kpi-sub">1.398.490 €</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-label">Gastos Oper.</div>
+                <div class="kpi-value">5,3%</div>
+                <div class="kpi-sub">777.232 €</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+
+            <!-- Analise Operacional -->
+            <div class="section-card">
+                <h2>Eficiência Operacional</h2>
+                <div class="highlight-box">
+                    <strong>Pico de Rentabilidade (Agosto):</strong><br>
+                    Margem de <strong>92%</strong>, gerando mais de <strong>3,3 Milhões €</strong> de lucro
+                    departamental.
+                </div>
+
+                <div class="alert-box">
+                    <strong>Sazonalidade (Break-even):</strong><br>
+                    Margens negativas em <strong>Jan, Fev, Nov e Dez</strong>. A operação de Março a Outubro sustenta os
+                    custos fixos do Inverno.
+                </div>
+
+                <p>A estrutura de custos é muito eficiente para uma unidade de 5 estrelas, com o Labor Cost a
+                    representar apenas 9,5% das vendas líquidas totais.</p>
+            </div>
+
+            <!-- Labor Cost Table -->
+            <div class="section-card">
+                <h2>Custo de Pessoal (Labor Cost)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Setor</th>
+                            <th class="val">Custo Anual</th>
+                            <th class="val">% Vendas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Quartos (Andares)</td>
+                            <td class="val">914.728 €</td>
+                            <td class="val">6,2%</td>
+                        </tr>
+                        <tr>
+                            <td>Receção</td>
+                            <td class="val">379.932 €</td>
+                            <td class="val">2,6%</td>
+                        </tr>
+                        <tr>
+                            <td>Quartos (Extras)</td>
+                            <td class="val">Var. (Max 16k)</td>
+                            <td class="val">-</td>
+                        </tr>
+                        <tr style="background-color: #f8fafc; font-weight:bold;">
+                            <td>TOTAL</td>
+                            <td class="val">1.398.490 €</td>
+                            <td class="val">9,5%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size:0.85rem; margin-top:10px;">* Headcount Andares: Pico de 59 pessoas (Jun-Set).<br>*
+                    Headcount Receção: Estável em 19 pessoas.</p>
+            </div>
+
+            <!-- Operational Expenses Table -->
+            <div class="section-card" style="grid-column: 1 / -1;">
+                <h2>Gastos Departamentais (Operação)</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th class="val">Custo Anual</th>
+                            <th class="val">% Vendas</th>
+                            <th>Driver de Custo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lavandaria</td>
+                            <td class="val">323.476 €</td>
+                            <td class="val">2,20%</td>
+                            <td>1,215 € por BNTS</td>
+                        </tr>
+                        <tr>
+                            <td>Comissões Agências</td>
+                            <td class="val">284.330 €</td>
+                            <td class="val">1,93%</td>
+                            <td>11,50% das vendas</td>
+                        </tr>
+                        <tr>
+                            <td>Limpeza e Higiene</td>
+                            <td class="val">48.253 €</td>
+                            <td class="val">0,30%</td>
+                            <td>0,190 € por BNTS</td>
+                        </tr>
+                        <tr>
+                            <td>Amenities</td>
+                            <td class="val">38.095 €</td>
+                            <td class="val">0,30%</td>
+                            <td>0,150 € por BNTS</td>
+                        </tr>
+                        <tr style="background-color: #f8fafc; font-weight:bold;">
+                            <td>TOTAL OPERACIONAL</td>
+                            <td class="val">777.232 €</td>
+                            <td class="val">5,3%</td>
+                            <td>-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="housekeeping_page_3.html" class="nav-btn">⬅ Prev</a>
+        <a href="housekeeping_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="housekeeping_page_5.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

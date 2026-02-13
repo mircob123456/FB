@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 4 - Gastos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            /* Wider for large table */
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .description-text {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            text-align: center;
+            max-width: 800px;
+            line-height: 1.5;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            /* Smaller font for many columns */
+            margin-bottom: 20px;
+        }
+
+        th {
+            background-color: var(--primary-teal);
+            color: white;
+            padding: 10px 5px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th:first-child {
+            text-align: left;
+            padding-left: 15px;
+            min-width: 150px;
+            position: sticky;
+            left: 0;
+            background-color: var(--primary-teal);
+            /* Keep sticky header visible */
+            z-index: 10;
+        }
+
+        td {
+            padding: 10px 5px;
+            border-bottom: 1px solid #e2e8f0;
+            text-align: right;
+            color: var(--text-dark);
+            white-space: nowrap;
+        }
+
+        td:first-child {
+            text-align: left;
+            font-weight: 700;
+            color: var(--primary-teal);
+            padding-left: 15px;
+            border-right: 1px solid #f0f0f0;
+            position: sticky;
+            left: 0;
+            background-color: var(--card-bg);
+            z-index: 5;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* Specific row styling based on attached image look - gray rows */
+        tr.highlight-row td {
+            background-color: #e9ecef;
+            font-weight: 700;
+        }
+
+        .total-cell {
+            font-weight: 800;
+            color: var(--primary-teal);
+            background-color: #f1f5f9;
+        }
+
+        .kpi-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .kpi-box {
+            background-color: #e2e8f0;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-left: 4px solid var(--accent-gold);
+        }
+
+        .kpi-label {
+            font-size: 0.9rem;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .kpi-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Gastos e Sazonalidade 2026</h1>
+
+    <p class="description-text">
+        Este mapa financeiro detalha os custos operacionais projetados para o ano de 2026, evidenciando claramente a
+        sazonalidade da operação do hotel.
+    </p>
+
+    <div class="container">
+
+        <div class="section-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rubrica</th>
+                        <th>jan/26</th>
+                        <th>fev/26</th>
+                        <th>mar/26</th>
+                        <th>abr/26</th>
+                        <th>mai/26</th>
+                        <th>jun/26</th>
+                        <th>jul/26</th>
+                        <th>ago/26</th>
+                        <th>set/26</th>
+                        <th>out/26</th>
+                        <th>nov/26</th>
+                        <th>dez/26</th>
+                        <th class="total-cell">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gastos De Pessoal</td>
+                        <td>2 285,75 €</td>
+                        <td>3 806,91 €</td>
+                        <td>6 365,62 €</td>
+                        <td>6 812,03 €</td>
+                        <td>6 811,63 €</td>
+                        <td>6 811,36 €</td>
+                        <td>6 810,73 €</td>
+                        <td>6 810,73 €</td>
+                        <td>6 810,80 €</td>
+                        <td>6 811,05 €</td>
+                        <td>11 887,99 €</td>
+                        <td>3 808,21 €</td>
+                        <td class="total-cell">75 832,80 €</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>Gastos das Vendas F&B</td>
+                        <td>- €</td>
+                        <td>- €</td>
+                        <td>106 343,32 €</td>
+                        <td>417 903,77 €</td>
+                        <td>440 517,28 €</td>
+                        <td>468 791,33 €</td>
+                        <td>484 420,61 €</td>
+                        <td>505 610,34 €</td>
+                        <td>421 414,74 €</td>
+                        <td>451 453,92 €</td>
+                        <td>64 060,05 €</td>
+                        <td>- €</td>
+                        <td class="total-cell">3 360 515,35 €</td>
+                    </tr>
+                    <tr class="highlight-row" style="background-color: #f1f5f9;">
+                        <td>Outros Gastos HKP</td>
+                        <td>750,00 €</td>
+                        <td>17 416,67 €</td>
+                        <td>32 729,74 €</td>
+                        <td>104 228,64 €</td>
+                        <td>97 397,83 €</td>
+                        <td>102 260,97 €</td>
+                        <td>120 077,05 €</td>
+                        <td>119 768,74 €</td>
+                        <td>84 247,96 €</td>
+                        <td>73 415,68 €</td>
+                        <td>24 188,59 €</td>
+                        <td>750,00 €</td>
+                        <td class="total-cell">780 476,72 €</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="kpi-container">
+                <div class="kpi-box">
+                    <span class="kpi-label">Comida e Bebida por Hospede</span>
+                    <span class="kpi-value">12,20 €</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="compras_page_3.html" class="nav-btn">⬅ Prev</a>
+        <a href="compras_overview.html" class="nav-btn">🏠 Home</a>
+        <!-- Next disabled for now -->
+        <a href="compras_page_5.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

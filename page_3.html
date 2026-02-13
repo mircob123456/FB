@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="--viewport-height: 6.95px;">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Extra&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Extra:wght@700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-teal: #0F7178;
+      --accent-gold: #FDB813;
+    }
+
+    body {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      background-image: url('https://picture-search.skywork.ai/aippt/image/sheet/2019503723898601472:17bd21b731114ace0a6d61277b38247f:0/df9deb29-1b76-4ddf-8361-f96a8c1bfef6/2019503723898601472:17bd21b731114ace0a6d61277b38247f:0_page_3_inp_img_lama_refine.png');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transform: scale(1.0, 1.0);
+      transform-origin: top left;
+    }
+
+    .text-item {
+      position: absolute;
+      white-space: nowrap;
+    }
+
+    .image-item {
+      position: absolute;
+      object-fit: cover;
+    }
+
+    /* Navigation Styles */
+    .nav-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      background: var(--primary-teal);
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(15, 113, 120, 0.4);
+      z-index: 1000;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    .nav-btn.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="">
+  <div class="container" id="slide-container"><img class="image-item"
+      src="https://picture-search.skywork.ai/aippt/image/sheet/2019503723898601472:17bd21b731114ace0a6d61277b38247f:0/e1bd345a-3afa-4be5-9cc5-bd76a68a74f2/2019503723898601472:17bd21b731114ace0a6d61277b38247f:0_page_3_image_1.png"
+      style="left: 81.92px; top: 278.64px; width: 732.1600000000001px; height: 205.92000000000007px;" />
+
+    <div class="text-item title"
+      style="font-size: 34px; font-weight: 700; font-family: &#39;Montserrat Extra&#39;; line-height: 126%; color: #0B1A28; left: 81px; top: 70px; width: 882.20px">
+      Planeamento de Headcount - Visão Geral</div>
+    <div class="text-item subtitle"
+      style="font-size: 23px; font-weight: 700; font-family: Montserrat; line-height: 126%; text-align: center; color: #6B7280; left: 869px; top: 164px; width: 358.60px">
+      Principais Departamentos<br />(Época Alta)</div>
+    <div class="text-item text"
+      style="font-size: 18px; font-weight: 700; font-family: &#39;Montserrat Extra&#39;; line-height: 100%; text-align: center; color: #0B1A28; left: 190px; top: 632px; width: 990.00px">
+      Variação Sazonal: 12 colaboradores (baixa época) → 196 colaboradores (época alta)</div>
+    <div class="text-item text"
+      style="font-size: 22px; font-weight: 700; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 971px; top: 250px; width: 119.90px">
+      Cozinha</div>
+    <div class="text-item text"
+      style="font-size: 19px; font-weight: 700; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 911px; top: 339px; width: 281.60px">
+      Restaurante Montechoro</div>
+    <div class="text-item text"
+      style="font-size: 20px; font-weight: 700; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 985px; top: 428px; width: 110.00px">
+      Bar AlBar</div>
+    <div class="text-item text"
+      style="font-size: 19px; font-weight: 700; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 920px; top: 517px; width: 257.40px">
+      Outros Departamentos</div>
+    <div class="text-item text"
+      style="font-size: 18px; font-weight: 700; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 945px; top: 278px; width: 203.50px; background: rgba(255,255,255,0.7); padding: 2px 5px; border-radius: 4px;">
+      68-75 colaboradores</div>
+    <div class="text-item text"
+      style="font-size: 18px; font-weight: 500; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 945px; top: 367px; width: 203.50px">
+      42-50 colaboradores</div>
+    <div class="text-item text"
+      style="font-size: 18px; font-weight: 500; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 945px; top: 456px; width: 203.50px">
+      15-20 colaboradores</div>
+    <div class="text-item text"
+      style="font-size: 18px; font-weight: 500; font-family: Montserrat; line-height: 120%; text-align: center; color: #0B1A28; left: 960px; top: 545px; width: 171.60px">
+      Variação sazonal</div>
+  </div>
+
+
+  <script data-sk-script-id="viewportHeightScript">
+    (function () {
+      var viewportHeight = window.top === window ? '1vh' : '6.95px';
+      document.documentElement.style.setProperty('--viewport-height', viewportHeight);
+
+      // Responsive Scaling Script
+      function scaleSlide() {
+        const container = document.getElementById('slide-container');
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const targetWidth = 1280;
+        const targetHeight = 720;
+
+        // Calculate scale based on width to fit
+        let scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+
+        // Apply scale
+        container.style.transform = `scale(${scale})`;
+
+        // Center - since transform origin is top left
+        const scaledWidth = targetWidth * scale;
+        const scaledHeight = targetHeight * scale;
+
+        const leftOffset = (windowWidth - scaledWidth) / 2;
+        const topOffset = (windowHeight - scaledHeight) / 2;
+
+        container.style.left = `${Math.max(0, leftOffset)}px`;
+        container.style.top = `${Math.max(0, topOffset)}px`;
+        container.style.position = 'absolute'; // Ensure absolute positioning for centering
+      }
+
+      window.addEventListener('resize', scaleSlide);
+      window.addEventListener('load', scaleSlide);
+      scaleSlide(); // Initial call
+    })();
+  </script>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <a href="page_2.html" class="nav-btn">⬅ Prev</a>
+    <a href="fb_overview.html" class="nav-btn">🏠 Home</a>
+    <a href="page_4.html" class="nav-btn">Next ➡</a>
+  </div>
+
+</body>
+
+</html>

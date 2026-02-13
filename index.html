@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jupiter Albufeira Hotel - Management Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--primary-teal);
+            width: 100%;
+            padding: 3rem 0;
+            box-shadow: 0 4px 20px rgba(15, 113, 120, 0.2);
+            text-align: center;
+            margin-bottom: 4rem;
+            color: white;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        p.subtitle {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            max-width: 1280px;
+            width: 100%;
+            padding: 0 30px;
+            box-sizing: border-box;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding-bottom: 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(15, 113, 120, 0.15);
+            border-color: var(--secondary-cyan);
+        }
+
+        .card-icon-area {
+            height: 160px;
+            background: linear-gradient(135deg, #f0fcfe 0%, #e0f7fa 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-teal);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-icon-area {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .card-action {
+            margin-top: 15px;
+            color: var(--secondary-cyan);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover .card-action {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Jupiter Albufeira Hotel</h1>
+            <p class="subtitle">Management Hub</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid">
+
+            <!-- Recursos Humanos -->
+            <a href="hr_overview.html" class="card">
+                <div class="card-icon-area">👥</div>
+                <div class="card-content">
+                    <span class="card-title">Recursos Humanos</span>
+                    <div class="card-action">Aceder ➡</div>
+                </div>
+            </a>
+
+            <!-- Compras -->
+            <a href="compras_overview.html" class="card">
+                <div class="card-icon-area">🛒</div>
+                <div class="card-content">
+                    <span class="card-title">Compras</span>
+                    <div class="card-action">Aceder ➡</div>
+                </div>
+            </a>
+
+            <!-- Manutenção -->
+            <a href="manutencao_overview.html" class="card">
+                <div class="card-icon-area">🔧</div>
+                <div class="card-content">
+                    <span class="card-title">Manutenção</span>
+                    <div class="card-action">Aceder ➡</div>
+                </div>
+            </a>
+
+            <!-- Spa -->
+            <a href="spa_overview.html" class="card">
+                <div class="card-icon-area">🧖‍♀️</div>
+                <div class="card-content">
+                    <span class="card-title">Spa</span>
+                    <div class="card-action">Aceder ➡</div>
+                </div>
+            </a>
+
+            <!-- FB (Active) -->
+            <a href="fb_overview.html" class="card">
+                <div class="card-icon-area"
+                    style="background: linear-gradient(135deg, #0F7178 0%, #0b565c 100%); color: var(--accent-gold);">
+                    🍽️</div>
+                <div class="card-content">
+                    <span class="card-title" style="color:var(--primary-teal);">Food & Beverage</span>
+                    <div class="card-action" style="color:var(--primary-teal); opacity:1; transform:none;">Aceder ➡
+                    </div>
+                </div>
+            </a>
+
+            <!-- HouseKeeping (Alojamento) -->
+            <a href="housekeeping_page_1.html" class="card">
+                <div class="card-icon-area">🧹</div>
+                <div class="card-content">
+                    <span class="card-title">Alojamento</span>
+                    <div class="card-action">Aceder ➡</div>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

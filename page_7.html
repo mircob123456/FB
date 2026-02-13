@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN" style="--viewport-height: 6.95px;">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary-teal: #0F7178;
+      --accent-gold: #FDB813;
+    }
+
+    body {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      background-image: url('https://picture-search.skywork.ai/aippt/image/sheet/2019503723898601472:17bd21b731114ace0a6d61277b38247f:5/fb5a072e-849d-46d1-b731-3ec24937a97b/2019503723898601472:17bd21b731114ace0a6d61277b38247f:5_page_7_inp_img_lama_refine.png');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transform: scale(1.0, 1.0);
+      transform-origin: top left;
+    }
+
+    .text-item {
+      position: absolute;
+      white-space: nowrap;
+    }
+
+    .image-item {
+      position: absolute;
+      object-fit: cover;
+    }
+
+    /* Navigation Styles */
+    .nav-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      background: var(--primary-teal);
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(15, 113, 120, 0.4);
+      z-index: 1000;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-btn {
+      text-decoration: none;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--accent-gold);
+      transform: translateY(-2px);
+    }
+
+    .nav-btn.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body class="">
+  <div class="container" id="slide-container"><img class="image-item"
+      src="https://picture-search.skywork.ai/aippt/image/sheet/2019503723898601472:17bd21b731114ace0a6d61277b38247f:5/0e87dde2-cbb9-457f-ae57-eb49a5cf3cca/2019503723898601472:17bd21b731114ace0a6d61277b38247f:5_page_7_image_2.png"
+      style="left: 107.52000000000001px; top: 236.16px; width: 290.55999999999995px; height: 287.28px;" />
+
+    <div class="text-item title"
+      style="font-size: 39px; font-weight: 700; font-family: &#39;Montserrat Extra&#39;; line-height: 120%; color: #14213D; left: 78px; top: 68px; width: 711.70px">
+      Análise de Gastos e Margens</div>
+    <div class="text-item text"
+      style="font-size: 30px; font-weight: 700; font-family: &#39;Noto Sans KR&#39;; line-height: 150%; color: #B91C1C; left: 480px; top: 225px; width: 352.00px">
+      ⚠️ ATENÇÃO CRÍTICA</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; color: #155E49; left: 939px; top: 216px; width: 206.80px">
+      Comidas: 41,3%</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; color: #155E49; left: 939px; top: 297px; width: 249.70px">
+      Room Service: 30%</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; color: #155E49; left: 939px; top: 378px; width: 116.60px">
+      Bar: 14%</div>
+    <div class="text-item text"
+      style="font-size: 24px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; color: #9A3412; left: 939px; top: 458px; width: 212.30px">
+      Banquetes: 29%</div>
+    <div class="text-item text"
+      style="font-size: 27px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; color: #B91C1C; left: 492px; top: 297px; width: 387.20px">
+      Mini-Bar: 518% das vendas</div>
+    <div class="text-item text"
+      style="font-size: 27px; font-weight: 600; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; color: #B91C1C; left: 492px; top: 360px; width: 387.20px">
+      Bebidas: 98,3% das vendas</div>
+    <div class="text-item text"
+      style="font-size: 27px; font-weight: 700; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; text-align: center; color: #14213D; left: 139px; top: 192px; width: 262.90px">
+      Gastos Totais F&amp;B</div>
+    <div class="text-item text"
+      style="font-size: 25px; font-weight: 700; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; text-align: center; color: #14213D; left: 456px; top: 571px; width: 403.70px">
+      Estrutura de Custos F&amp;B 2026</div>
+    <div class="text-item text"
+      style="font-size: 20px; font-weight: 400; font-family: &#39;Noto Sans KR&#39;; line-height: 139%; text-align: center; color: #6B7280; left: 170px; top: 607px; width: 1040.60px">
+      Comidas apresentam margens saudáveis | Bebidas requerem revisão urgente de preços e custos</div>
+    <div class="text-item text"
+      style="font-size: 19px; font-weight: 400; font-family: &#39;Noto Sans KR&#39;; line-height: 140%; color: #14213D; left: 487px; top: 422px; width: 401.50px">
+      Margens insustentáveis - Ação imediata<br />necessária</div>
+  </div>
+
+
+  <script data-sk-script-id="viewportHeightScript">
+    (function () {
+      var viewportHeight = window.top === window ? '1vh' : '6.95px';
+      document.documentElement.style.setProperty('--viewport-height', viewportHeight);
+
+      // Responsive Scaling Script
+      function scaleSlide() {
+        const container = document.getElementById('slide-container');
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const targetWidth = 1280;
+        const targetHeight = 720;
+
+        // Calculate scale based on width to fit
+        let scale = Math.min(windowWidth / targetWidth, windowHeight / targetHeight);
+
+        // Apply scale
+        container.style.transform = `scale(${scale})`;
+
+        // Center - since transform origin is top left
+        const scaledWidth = targetWidth * scale;
+        const scaledHeight = targetHeight * scale;
+
+        const leftOffset = (windowWidth - scaledWidth) / 2;
+        const topOffset = (windowHeight - scaledHeight) / 2;
+
+        container.style.left = `${Math.max(0, leftOffset)}px`;
+        container.style.top = `${Math.max(0, topOffset)}px`;
+        container.style.position = 'absolute'; // Ensure absolute positioning for centering
+      }
+
+      window.addEventListener('resize', scaleSlide);
+      window.addEventListener('load', scaleSlide);
+      scaleSlide(); // Initial call
+    })();
+  </script>
+
+  <!-- Navigation Bar -->
+  <div class="nav-container">
+    <a href="page_6.html" class="nav-btn">⬅ Prev</a>
+    <a href="fb_overview.html" class="nav-btn">🏠 Home</a>
+    <a href="page_8.html" class="nav-btn">Next ➡</a>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 3 - Headcount Visão Geral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            min-width: 900px;
+        }
+
+        th,
+        td {
+            padding: 8px 10px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            font-weight: 600;
+            min-width: 250px;
+            position: sticky;
+            left: 0;
+            background-color: var(--card-bg);
+            z-index: 10;
+        }
+
+        th {
+            background-color: #C1995B;
+            /* Gold-ish brown color from image header */
+            color: white;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Section headers within table */
+        .section-header td {
+            background-color: #eeecdb;
+            /* Light beige/grey for sections */
+            color: #8b6b36;
+            /* Darker gold/brown text */
+            font-weight: 700;
+            text-align: left;
+            padding: 10px;
+        }
+
+        .section-header td:first-child {
+            background-color: #eeecdb;
+        }
+
+        /* Value highlighting */
+        .val-blue {
+            color: #00a0dc;
+            font-weight: 700;
+        }
+
+        .val-black {
+            color: var(--text-dark);
+        }
+
+        tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .grid-charts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .chart-card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .chart-card h3 {
+            margin-top: 0;
+            color: var(--primary-teal);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Headcount - Visão Geral</h1>
+
+    <div class="container">
+        <div class="section-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="background-color:#C1995B;">PESSOAL</th>
+                        <th>Jan</th>
+                        <th>Fev</th>
+                        <th>Mar</th>
+                        <th>Abr</th>
+                        <th>Mai</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Ago</th>
+                        <th>Set</th>
+                        <th>Out</th>
+                        <th>Nov</th>
+                        <th>Dez</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- QUARTOS | Receção Section -->
+                    <tr class="section-header">
+                        <td colspan="13">QUARTOS | Receção</td>
+                    </tr>
+                    <tr>
+                        <td>Diretor Alojamento</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Chefe de Receção</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Sub Chefe de Receção</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Recepcionista 1ª</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td class="val-blue">5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Recepcionista 2ª</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td class="val-blue">4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Mandarete (Quadro)</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Mandarete</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td class="val-blue">4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>4</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Motorista (1/2 Quadro)</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Motorista</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+
+                    <!-- QUARTOS | Andares Section -->
+                    <tr class="section-header">
+                        <td colspan="13">QUARTOS | Andares</td>
+                    </tr>
+                    <tr>
+                        <td>Governanta Geral (Quadro)</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Sub-Governanta Quartos (Quadro)</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Sub-Governanta Quartos</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td class="val-blue">5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>5</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Sub-Governanta Areas</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Empregada de Quartos</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td class="val-blue">15</td>
+                        <td class="val-blue">29</td>
+                        <td class="val-blue">29</td>
+                        <td class="val-blue">30</td>
+                        <td>30</td>
+                        <td>30</td>
+                        <td>30</td>
+                        <td>28</td>
+                        <td>28</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Empregada de Quartos (Quadro)</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Empregada Limpeza Geral + Turndown</td>
+                        <td class="val-blue">0</td>
+                        <td class="val-blue">1</td>
+                        <td class="val-blue">12</td>
+                        <td class="val-blue">16</td>
+                        <td class="val-blue">18</td>
+                        <td>18</td>
+                        <td>18</td>
+                        <td>18</td>
+                        <td>18</td>
+                        <td>18</td>
+                        <td>18</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Empregada Limpeza Geral (Quadro)</td>
+                        <td class="val-blue">1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Rouparia (Quadro)</td>
+                        <td class="val-blue">0</td>
+                        <td>0</td>
+                        <td class="val-blue">2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="grid-charts">
+            <div class="chart-card">
+                <h3>Evolução: Receção</h3>
+                <canvas id="chartReception"></canvas>
+            </div>
+            <div class="chart-card">
+                <h3>Evolução: Andares</h3>
+                <canvas id="chartFloors"></canvas>
+            </div>
+            <div class="chart-card full-width">
+                <h3>Total Housekeeping Headcount</h3>
+                <canvas id="chartTotal"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="housekeeping_page_2.html" class="nav-btn">⬅ Prev</a>
+        <a href="housekeeping_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="housekeeping_page_4.html" class="nav-btn">Next ➡</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctxReception = document.getElementById('chartReception').getContext('2d');
+        const ctxFloors = document.getElementById('chartFloors').getContext('2d');
+        const ctxTotal = document.getElementById('chartTotal').getContext('2d');
+
+        const months = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
+
+        // Data calculated from the table
+        const dataReception = [5, 5, 19, 19, 19, 19, 19, 19, 19, 19, 19, 5];
+        const dataFloors = [3, 5, 38, 56, 58, 59, 59, 59, 59, 57, 57, 3];
+        const dataTotal = dataReception.map((num, idx) => num + dataFloors[idx]);
+
+        new Chart(ctxReception, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Receção Headcount',
+                    data: dataReception,
+                    borderColor: '#46B3C6',
+                    backgroundColor: 'rgba(70, 179, 198, 0.2)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, max: 25 } }
+            }
+        });
+
+        new Chart(ctxFloors, {
+            type: 'line',
+            data: {
+                labels: months,
+                datasets: [{
+                    label: 'Andares Headcount',
+                    data: dataFloors,
+                    borderColor: '#0F7178',
+                    backgroundColor: 'rgba(15, 113, 120, 0.2)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: { y: { beginAtZero: true, max: 70 } }
+            }
+        });
+
+        new Chart(ctxTotal, {
+            type: 'bar',
+            data: {
+                labels: months,
+                datasets: [
+                    {
+                        label: 'Receção',
+                        data: dataReception,
+                        backgroundColor: '#46B3C6',
+                        stack: 'Stack 0'
+                    },
+                    {
+                        label: 'Andares',
+                        data: dataFloors,
+                        backgroundColor: '#0F7178',
+                        stack: 'Stack 0'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            footer: (tooltipItems) => {
+                                let sum = 0;
+                                tooltipItems.forEach(function (tooltipItem) {
+                                    sum += tooltipItem.parsed.y;
+                                });
+                                return 'Total: ' + sum;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        stacked: true
+                    },
+                    x: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

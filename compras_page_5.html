@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 5 - Desafios Compras</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 30px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #64748b;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+            margin-top: 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .challenge-card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(15, 113, 120, 0.05);
+            border-left: 5px solid var(--primary-teal);
+            transition: transform 0.2s;
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(15, 113, 120, 0.1);
+        }
+
+        .challenge-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary-teal);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .challenge-icon {
+            background-color: rgba(15, 113, 120, 0.1);
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .challenge-text {
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .action-box {
+            background-color: #f8fafc;
+            /* Light gray background */
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            border: 1px dashed #cbd5e1;
+        }
+
+        .action-label {
+            font-weight: 700;
+            color: var(--secondary-cyan);
+            margin-right: 5px;
+        }
+
+        /* Table Styles */
+        .monitoring-section {
+            width: 100%;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+        }
+
+        .monitoring-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: var(--primary-teal);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            border-radius: 4px 4px 0 0;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e2e8f0;
+            color: var(--text-dark);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .freq-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            background-color: #e0f2f1;
+            color: var(--primary-teal);
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Desafios Compras</h1>
+    <h2>Desafios Estratégicos para 2026</h2>
+
+    <div class="container">
+
+        <div class="content-grid">
+            <!-- Strategic Challenges -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="challenge-card">
+                    <div class="challenge-title">
+                        <div class="challenge-icon">1</div>
+                        Cumprimento do CAPEX
+                    </div>
+                    <div class="challenge-text">
+                        O CAPEX deve ser monitorizado de perto para garantir que os investimentos
+                        em equipamentos ou infraestruturas sejam executado dentro do orçamentado </div>
+                    <div class="action-box">
+                        <span class="action-label">Ação:</span> Priorizar investimentos que gerem redução de custos
+                        operacionais a médio prazo (ex: equipamentos de cozinha mais eficientes).
+                    </div>
+                </div>
+
+                <div class="challenge-card">
+                    <div class="challenge-title">
+                        <div class="challenge-icon">2</div>
+                        Agilização e Controlo de Custos
+                    </div>
+                    <div class="challenge-text">
+                        Com o custo de F&B por hóspede fixado em 12,20 €, qualquer variação no preço dos fornecedores
+                        terá um impacto direto na margem.
+                    </div>
+                    <div class="action-box">
+                        <span class="action-label">Estratégia:</span> Rever contratos com os fornecedores dos artigos de
+                        maior peso (os chamados itens "A" da análise ABC).
+                    </div>
+                </div>
+
+                <div class="challenge-card">
+                    <div class="challenge-title">
+                        <div class="challenge-icon">3</div>
+                        Redução da Carta
+                    </div>
+                    <div class="challenge-text">
+                        A decisão de reduzir a carta de bar permite maior negociação das bebidas. Menos referências
+                        permitem maior volume de compra por artigo.
+                    </div>
+                    <div class="action-box">
+                        <span class="action-label">Objetivo:</span> Aumentar o poder de negociação para obter melhores
+                        preços unitários e bónus de volume.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monitoring Plan -->
+            <div class="monitoring-section">
+                <div class="monitoring-title">📊 Plano de Monitorização e Controlo</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th width="25%">Ferramenta</th>
+                            <th width="20%">Frequência</th>
+                            <th>Objetivo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Relatórios Semanais de compras</strong></td>
+                            <td><span class="freq-badge">Semanal</span></td>
+                            <td>Analisar desvios de consumo e flutuação de preços de mercado.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Revisão de cardex de comidadas e bebidas </strong></td>
+                            <td><span class="freq-badge">Quinzenal</span></td>
+                            <td>Avaliar o desempenho dos fornecedores principais e procurar alternativas de sourcing.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Controlo de Stock</strong></td>
+                            <td><span class="freq-badge">Mensal</span></td>
+                            <td>Inventario, reduzir desperdicio e garantir que o Food Cost se mantém nos 12,20 € por
+                                hóspede.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="compras_page_4.html" class="nav-btn">⬅ Prev</a>
+        <a href="compras_overview.html" class="nav-btn">🏠 Home</a>
+        <!-- Next disabled for now -->
+        <a href="compras_page_6.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

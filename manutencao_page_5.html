@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 5 - Água, Electricidade, Gás e Resíduos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --table-header-bg: #cbb57b;
+            /* Gold/Brown from image header */
+            --table-header-text: #FFFFFF;
+            --table-border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1300px;
+            /* Wider for this table */
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            width: 100%;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        th,
+        td {
+            padding: 8px 6px;
+            text-align: right;
+            border-bottom: 1px solid var(--table-border);
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--table-header-text);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            background-color: var(--card-bg);
+            z-index: 10;
+            border-right: 2px solid var(--table-border);
+            min-width: 200px;
+            font-weight: 600;
+        }
+
+        th:first-child {
+            background-color: var(--table-header-bg);
+            z-index: 20;
+        }
+
+        .total-col {
+            background-color: #fefce8;
+            font-weight: 700;
+            border-left: 2px solid var(--table-border);
+        }
+
+        .pct-col {
+            background-color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        /* Specific row styles matching image */
+        .group-header {
+            background-color: #e5e5e5;
+            font-weight: 700;
+        }
+
+        .main-total-row {
+            background-color: #cbb57b;
+            color: white;
+            font-weight: 700;
+        }
+
+        .blue-val {
+            color: #0ea5e9;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Análise de Energias e Resíduos</h1>
+
+    <div class="container">
+
+        <div class="section-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ÁGUA, ELECTRICIDADE, GÁS e RESÍDUOS</th>
+                        <th>Jan</th>
+                        <th>Fev</th>
+                        <th>Mar</th>
+                        <th>Abr</th>
+                        <th>Mai</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Ago</th>
+                        <th>Set</th>
+                        <th>Out</th>
+                        <th>Nov</th>
+                        <th>Dez</th>
+                        <th class="total-col">Ano</th>
+                        <th class="pct-col">%</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Revenue Ref (Optional) -->
+                    <tr style="background-color: #fefce8; color:#b45309;">
+                        <td>Total de Vendas Líquidas¹</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>315 €</td>
+                        <td>3 316 €</td>
+                        <td class="total-col">6 781 €</td>
+                        <td class="pct-col"></td>
+                    </tr>
+
+                    <!-- Expenses -->
+                    <tr class="group-header">
+                        <td>Outros Gastos Departamentais</td>
+                        <td>1 341 €</td>
+                        <td>1 341 €</td>
+                        <td>29 014 €</td>
+                        <td>87 101 €</td>
+                        <td>92 068 €</td>
+                        <td>96 863 €</td>
+                        <td>100 278 €</td>
+                        <td>103 974 €</td>
+                        <td>88 491 €</td>
+                        <td>94 108 €</td>
+                        <td>14 976 €</td>
+                        <td>4 341 €</td>
+                        <td class="total-col">719 899 €</td>
+                        <td class="pct-col"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Água</td>
+                        <td class="blue-val">1 883 €</td>
+                        <td>1 174 €</td>
+                        <td>1 174 €</td>
+                        <td>7 815 €</td>
+                        <td>18 740 €</td>
+                        <td>19 719 €</td>
+                        <td>20 928 €</td>
+                        <td>21 600 €</td>
+                        <td>22 560 €</td>
+                        <td>18 817 €</td>
+                        <td>20 124 €</td>
+                        <td>3 371 €</td>
+                        <td class="total-col">157 196 €</td>
+                        <td class="pct-col">0,7%</td>
+                    </tr>
+                    <tr>
+                        <td>Resíduos Sólidos</td>
+                        <td class="blue-val">1 661 €</td>
+                        <td>365 €</td>
+                        <td>365 €</td>
+                        <td>4 567 €</td>
+                        <td>17 647 €</td>
+                        <td>18 958 €</td>
+                        <td>19 273 €</td>
+                        <td>20 177 €</td>
+                        <td>20 318 €</td>
+                        <td>18 724 €</td>
+                        <td>19 488 €</td>
+                        <td>2 803 €</td>
+                        <td class="total-col">143 045 €</td>
+                        <td class="pct-col">0,6%</td>
+                    </tr>
+                    <tr>
+                        <td>Electricidade</td>
+                        <td class="blue-val">3 956 €</td>
+                        <td>2 142 €</td>
+                        <td>2 142 €</td>
+                        <td>13 643 €</td>
+                        <td>39 857 €</td>
+                        <td>41 958 €</td>
+                        <td>44 554 €</td>
+                        <td>45 997 €</td>
+                        <td>48 059 €</td>
+                        <td>40 022 €</td>
+                        <td>42 829 €</td>
+                        <td>6 859 €</td>
+                        <td class="total-col">330 205 €</td>
+                        <td class="pct-col">1,5%</td>
+                    </tr>
+                    <tr>
+                        <td>Gás</td>
+                        <td class="blue-val">0,742 €</td>
+                        <td>0 €</td>
+                        <td>0 €</td>
+                        <td>1 610 €</td>
+                        <td>7 766 €</td>
+                        <td>8 199 €</td>
+                        <td>8 733 €</td>
+                        <td>9 030 €</td>
+                        <td>9 455 €</td>
+                        <td>7 800 €</td>
+                        <td>8 378 €</td>
+                        <td>971 €</td>
+                        <td class="total-col">61 942 €</td>
+                        <td class="pct-col">0,3%</td>
+                    </tr>
+                    <tr>
+                        <td>Taxas (Agua, Elect., Gás, Residuos)</td>
+                        <td class="blue-val">0,249 €</td>
+                        <td>110 €</td>
+                        <td>110 €</td>
+                        <td>829 €</td>
+                        <td>2 520 €</td>
+                        <td>2 665 €</td>
+                        <td>2 805 €</td>
+                        <td>2 904 €</td>
+                        <td>3 012 €</td>
+                        <td>2 561 €</td>
+                        <td>2 724 €</td>
+                        <td>420 €</td>
+                        <td class="total-col">20 772 €</td>
+                        <td class="pct-col">0,1%</td>
+                    </tr>
+                    <tr>
+                        <td>Combustíveis</td>
+                        <td class="blue-val">550 €</td>
+                        <td>550 €</td>
+                        <td>550 €</td>
+                        <td>550 €</td>
+                        <td>570 €</td>
+                        <td>570 €</td>
+                        <td>570 €</td>
+                        <td>570 €</td>
+                        <td>570 €</td>
+                        <td>570 €</td>
+                        <td>570 €</td>
+                        <td>550 €</td>
+                        <td class="total-col">6 740 €</td>
+                        <td class="pct-col">0,0%</td>
+                    </tr>
+
+                    <!-- Margin -->
+                    <tr class="main-total-row">
+                        <td>Margem Departamental</td>
+                        <td>4 026 €</td>
+                        <td>4 026 €</td>
+                        <td>28 699 €</td>
+                        <td>86 786 €</td>
+                        <td>91 753 €</td>
+                        <td>96 548 €</td>
+                        <td>99 963 €</td>
+                        <td>103 659 €</td>
+                        <td>88 179 €</td>
+                        <td>93 793 €</td>
+                        <td>14 661 €</td>
+                        <td>1 025 €</td>
+                        <td class="total-col">713 118 €</td>
+                        <td class="pct-col">3,2%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="manutencao_page_4.html" class="nav-btn">⬅ Prev</a>
+        <a href="manutencao_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="#" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

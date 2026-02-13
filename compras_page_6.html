@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 6 - Estratégia RH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #64748b;
+            margin-bottom: 3rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Grid for Pillars */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            width: 100%;
+            margin-bottom: 40px;
+        }
+
+        .pillar-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(15, 113, 120, 0.08);
+            border-top: 5px solid var(--primary-teal);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pillar-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .pillar-num {
+            background: var(--primary-teal);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .pillar-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-teal);
+        }
+
+        .pillar-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .pillar-content li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            color: #475569;
+        }
+
+        .pillar-content li::before {
+            content: "➜";
+            position: absolute;
+            left: 0;
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            top: 3px;
+        }
+
+        .highlight-val {
+            color: var(--primary-teal);
+            font-weight: 700;
+        }
+
+        /* Slogan Section */
+        .slogan-box {
+            background: linear-gradient(135deg, var(--primary-teal), var(--secondary-cyan));
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(15, 113, 120, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slogan-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .slogan-sub {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-style: italic;
+            position: relative;
+            z-index: 2;
+        }
+
+        .slogan-box::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 10rem;
+            font-family: serif;
+            color: rgba(255, 255, 255, 0.1);
+            z-index: 1;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Estratégia de RH do Hotel</h1>
+    <p class="subtitle">Valorização, Estabilidade e Cultura (310 Colaboradores)</p>
+
+    <div class="container">
+
+        <div class="pillar-grid">
+
+            <!-- Pillar 1 -->
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-num">1</div>
+                    <div class="pillar-title">Valorização Financeira</div>
+                </div>
+                <div class="pillar-content">
+                    <ul>
+                        <li><strong>Política Salarial:</strong> Revisão acima do mercado e aumentos anuais garantidos
+                            entre <span class="highlight-val">5% a 6%</span>.</li>
+                        <li><strong>Apoio Direto:</strong> Subsídio de Alimentação fixado em <span
+                                class="highlight-val">107,8€</span> (rendimento disponível superior).</li>
+                        <li><strong>Mérito:</strong> Política ativa de prémios e incentivos baseada na excelência.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-num">2</div>
+                    <div class="pillar-title">Saúde e Segurança</div>
+                </div>
+                <div class="pillar-content">
+                    <ul>
+                        <li><strong>Plano de Saúde:</strong> Atribuído a todos os colaboradores efetivos.</li>
+                        <li><strong>Enfermaria:</strong> Acesso à enfermaria do Hotel.
+                        </li>
+                        <li>Foco no bem-estar além do horário de trabalho.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-num">3</div>
+                    <div class="pillar-title">Cultura de Proximidade</div>
+                </div>
+                <div class="pillar-content">
+                    <ul>
+                        <li><strong>RH de Proximidade:</strong> Acompanhamento individualizado para garantir voz ativa a
+                            cada colaborador.</li>
+                        <li><strong>Gestão de Talentos:</strong> Planos de carreira personalizados.</li>
+                        <li>Crescimento interno e promoção do mérito.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="pillar-card">
+                <div class="pillar-header">
+                    <div class="pillar-num">4</div>
+                    <div class="pillar-title">Clima Organizacional</div>
+                </div>
+                <div class="pillar-content">
+                    <ul>
+                        <li><strong>Foco na Satisfação:</strong> Clima positivo como ferramenta de retenção.</li>
+                        <li><strong>Employer Branding:</strong> 80% de Satisfação das equipas.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Slogan -->
+        <div class="slogan-box">
+            <div class="slogan-text">"No Jupiter Albufeira, Somos Família."</div>
+            <div class="slogan-sub">Mais do que uma equipa gigante, somos uma equipa de pessoas com nome.</div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="compras_page_5.html" class="nav-btn">⬅ Prev</a>
+        <a href="compras_overview.html" class="nav-btn">🏠 Home</a>
+        <!-- Next disabled for now -->
+        <a href="#" class="nav-btn" style="opacity: 0.5; pointer-events: none;">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

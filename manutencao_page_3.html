@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 3 - Headcount - Visão Geral</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --table-header-bg: #f1f5f9;
+            --table-border: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            width: 100%;
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        th,
+        td {
+            padding: 10px 8px;
+            text-align: center;
+            border-bottom: 1px solid var(--table-border);
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: var(--primary-teal);
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        th:first-child,
+        td:first-child {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            background-color: var(--card-bg);
+            /* Match card bg for sticky col */
+            z-index: 10;
+            border-right: 2px solid var(--table-border);
+            min-width: 250px;
+        }
+
+        th:first-child {
+            background-color: var(--table-header-bg);
+            z-index: 20;
+        }
+
+        .group-header {
+            background-color: #f8fafc;
+            color: #b45309;
+            /* Dark gold/brown */
+            font-weight: 700;
+            text-transform: uppercase;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .total-row {
+            background-color: #fce7b2;
+            /* Light gold matches image header somewhat */
+            font-weight: 700;
+            color: #8b6b36;
+        }
+
+        td.val {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+
+        .blue-text {
+            color: #0ea5e9;
+            font-weight: 600;
+        }
+
+        .green-check {
+            color: var(--primary-teal);
+            font-size: 0.8em;
+            vertical-align: super;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Headcount - Visão Geral</h1>
+
+    <div class="container">
+
+        <div class="section-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Secção / Função</th>
+                        <th>Jan</th>
+                        <th>Fev</th>
+                        <th>Mar</th>
+                        <th>Abr</th>
+                        <th>Mai</th>
+                        <th>Jun</th>
+                        <th>Jul</th>
+                        <th>Ago</th>
+                        <th>Set</th>
+                        <th>Out</th>
+                        <th>Nov</th>
+                        <th>Dez</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Group 1 -->
+                    <tr class="total-row">
+                        <td>AUXILIARES | Manutenção e Jardinagem</td>
+                        <td>12,0</td>
+                        <td>12,0</td>
+                        <td>12,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                        <td>13,0</td>
+                    </tr>
+                    <tr>
+                        <td>Responsável da Manutenção</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                    </tr>
+                    <tr>
+                        <td>Serviços Técnicos / SubChefe</td>
+                        <td class="val blue-text">0</td>
+                        <td class="val">0</td>
+                        <td class="val">0</td>
+                        <td class="val blue-text">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                    </tr>
+                    <tr>
+                        <td>Polivalente</td>
+                        <td class="val blue-text">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                    </tr>
+                    <tr>
+                        <td>Jardineiro</td>
+                        <td class="val blue-text">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                    </tr>
+                    <tr>
+                        <td>Extra (Wellington)</td>
+                        <td class="val blue-text">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                    </tr>
+
+                    <!-- Group 2 -->
+                    <tr class="total-row" style="border-top: 2px solid #ddd;">
+                        <td>AUXILIARES | Piscina</td>
+                        <td>1,0</td>
+                        <td>1,0</td>
+                        <td>8,2</td>
+                        <td>8,2</td>
+                        <td>8,2</td>
+                        <td>10,2</td>
+                        <td>10,2</td>
+                        <td>10,2</td>
+                        <td>10,2</td>
+                        <td>10,2</td>
+                        <td>10,2</td>
+                        <td>1,0</td>
+                    </tr>
+                    <tr>
+                        <td>Tratador de Piscina (Quadro)</td>
+                        <td class="val blue-text">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                    </tr>
+                    <tr>
+                        <td>Nadador-Salvador</td>
+                        <td class="val blue-text">0</td>
+                        <td class="val">0</td>
+                        <td class="val blue-text">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val">1</td>
+                        <td class="val blue-text">0</td>
+                    </tr>
+                    <tr>
+                        <td>Enfermeira</td>
+                        <td class="val blue-text">0</td>
+                        <td class="val">0</td>
+                        <td class="val blue-text">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val">1,2</td>
+                        <td class="val blue-text">0</td>
+                    </tr>
+                    <tr>
+                        <td>Piscineiros</td>
+                        <td class="val blue-text">0</td>
+                        <td class="val">0</td>
+                        <td class="val blue-text">5</td>
+                        <td class="val">5</td>
+                        <td class="val">5</td>
+                        <td class="val blue-text">7</td>
+                        <td class="val">7</td>
+                        <td class="val">7</td>
+                        <td class="val">7</td>
+                        <td class="val">7</td>
+                        <td class="val">7</td>
+                        <td class="val blue-text">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="manutencao_page_2.html" class="nav-btn">⬅ Prev</a>
+        <a href="manutencao_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="manutencao_page_4.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

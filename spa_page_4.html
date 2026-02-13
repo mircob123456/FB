@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 4 - Vendas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(15, 113, 120, 0.1);
+            text-align: center;
+            border: 1px solid rgba(15, 113, 120, 0.05);
+        }
+
+        .kpi-title {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .kpi-value {
+            font-size: 1.8rem;
+            color: var(--primary-teal);
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .kpi-sub {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 5px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+        }
+
+        h2 {
+            color: var(--primary-teal);
+            font-family: 'Montserrat', sans-serif;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .strategy-item {
+            margin-bottom: 20px;
+        }
+
+        .strategy-title {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .strategy-text {
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .chart-placeholder {
+            height: 300px;
+            background: #f8fafc;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .data-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .data-row:last-child {
+            border-bottom: none;
+        }
+
+        .data-label {
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .data-val {
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Vendas <span style="font-size:1rem; color:#94a3b8; vertical-align:middle;">(Spa & Retalho)</span></h1>
+
+    <div class="container">
+
+        <!-- KPIs -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-title">Receita de Tratamentos</div>
+                <div class="kpi-value">139.936 €</div>
+                <div class="kpi-sub">67.7% do Total</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Receita Circuitos</div>
+                <div class="kpi-value">65.830 €</div>
+                <div class="kpi-sub">Incluindo AI Plus</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Venda Produtos</div>
+                <div class="kpi-value">975,60 €</div>
+                <div class="kpi-sub">Oportunidade de Crescimento</div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-title">Venda Média / Quarto</div>
+                <div class="kpi-value">2,48 €</div>
+                <div class="kpi-sub">Meta: > 2,48 €</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <!-- Strategic Analysis -->
+            <div class="section-card">
+                <h2>Estratégia & Análise</h2>
+
+                <div class="strategy-item">
+                    <span class="strategy-title">1. Potencializar o Retalho</span>
+                    <p class="strategy-text">
+                        Desenvolver uma estratégia para aumentar os 975,60 € de vendas de produtos, visando aumentar a
+                        margem sem ocupar horas de terapeutas. Upselling após tratamentos é chave.
+                    </p>
+                </div>
+
+                <div class="strategy-item">
+                    <span class="strategy-title">2. Monitorização do AI Plus</span>
+                    <p class="strategy-text">
+                        O AI Plus (Circuitos) gera quase tanto valor (31.987,80 €) como os circuitos normais (33.843,04
+                        €). Oportunidade para rever o pricing ou benefícios deste pacote para 2026.
+                    </p>
+                </div>
+
+                <div class="strategy-item">
+                    <span class="strategy-title">3. Meta para KPI por Quarto</span>
+                    <p class="strategy-text">
+                        Objetivo de elevar a venda média acima dos atuais 2,48 € através de campanhas de marketing
+                        interno.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Revenue Mix Details -->
+            <div class="section-card">
+                <h2>Composição da Receita</h2>
+
+                <div style="margin-bottom: 20px;">
+                    <div class="data-row">
+                        <span class="data-label">Tratamentos (Core)</span>
+                        <span class="data-val">139.936,00 €</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Circuitos Padrão</span>
+                        <span class="data-val">33.843,04 €</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">AI Plus (Circuitos)</span>
+                        <span class="data-val">31.987,80 €</span>
+                    </div>
+                    <div class="data-row">
+                        <span class="data-label">Produtos Retalho</span>
+                        <span class="data-val">975,60 €</span>
+                    </div>
+                    <div style="margin-top:15px; border-top: 2px solid #e2e8f0; padding-top:10px;" class="data-row">
+                        <span class="data-label" style="color:var(--primary-teal); font-weight:700;">TOTAL ANUAL</span>
+                        <span class="data-val" style="color:var(--primary-teal);">206.742,44 €</span>
+                    </div>
+                </div>
+
+                <div style="background:#f0fdf4; padding:15px; border-radius:10px; border-left:4px solid #22c55e;">
+                    <p style="margin:0; font-size:0.9rem; color:#166534;">
+                        <strong>Insight:</strong> Os circuitos têm forte aceitação (32% da receita), especialmente via
+                        upgrade para Tudo Incluído.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="spa_page_3.html" class="nav-btn">⬅ Prev</a>
+        <a href="spa_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="spa_page_5.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

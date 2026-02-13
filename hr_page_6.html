@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 6 - Satisfação Colaborador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --positive-green: #2ecc71;
+            --neutral-grey: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+            gap: 40px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .kpi-container {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .kpi-card {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border-bottom: 6px solid var(--primary-teal);
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            transition: transform 0.3s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .kpi-title {
+            font-size: 1.2rem;
+            color: var(--neutral-grey);
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .kpi-value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary-teal);
+            margin-bottom: 10px;
+        }
+
+        .kpi-value.gold {
+            color: #d4a017;
+            /* Darker gold for readability */
+        }
+
+        .kpi-context {
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Satisfação Colaborador</h1>
+
+    <div class="container">
+
+        <div class="kpi-container">
+            <!-- 2025 Real -->
+            <div class="kpi-card">
+                <div class="kpi-title">Realizado 2025</div>
+                <div class="kpi-value gold">80,2%</div>
+                <div class="kpi-context">Média Anual</div>
+            </div>
+
+            <!-- 2026 Objective -->
+            <div class="kpi-card" style="border-bottom-color: var(--accent-gold);">
+                <div class="kpi-title">Objetivo 2026</div>
+                <div class="kpi-value">80,5%</div>
+                <div class="kpi-context">Meta Definida (+0,3%)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="hr_page_5.html" class="nav-btn">⬅ Prev</a>
+        <a href="hr_overview.html" class="nav-btn">🏠 Home</a>
+        <!-- Next is disabled for now, but could be page 7 -->
+        <a href="#" class="nav-btn" style="opacity: 0.5; pointer-events: none;">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

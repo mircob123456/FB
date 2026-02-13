@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 3 - Objetivos de Satisfação de Hospede</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --positive-green: #2ecc71;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            width: 100%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1rem;
+        }
+
+        th {
+            background-color: #fceecb;
+            /* Light gold/beige background from image */
+            color: to_black;
+            padding: 12px 15px;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            border: 1px solid #000;
+            color: #000;
+        }
+
+        th:first-child {
+            text-align: left;
+        }
+
+        td {
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+            color: #000;
+            font-weight: 500;
+        }
+
+        td:first-child {
+            text-align: left;
+            font-weight: 700;
+            background-color: #fdf5e6;
+            /* Slight beige for first column */
+        }
+
+        /* Alternating rows if needed, but image shows plain or specific style */
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .value-green {
+            color: #00b894;
+            font-weight: 700;
+        }
+
+        .value-neutral {
+            color: #636e72;
+        }
+
+        /* Footer row style */
+        tr.footer-row td {
+            background-color: #fcf4e4;
+            font-weight: 800;
+            border-top: 2px solid #000;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Objetivos de Satisfação de Hospede</h1>
+
+    <div class="container">
+
+        <div class="section-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Departamento</th>
+                        <th>Objetivos Departamental</th>
+                        <th>vs 2025</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Reservas</td>
+                        <td>92,50</td>
+                        <td class="value-green">0,50</td>
+                    </tr>
+                    <tr>
+                        <td>Receção</td>
+                        <td>93,00</td>
+                        <td class="value-green">0,50</td>
+                    </tr>
+                    <tr>
+                        <td>Bagageiros</td>
+                        <td>94,00</td>
+                        <td class="value-neutral">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Limpeza/Quartos</td>
+                        <td>92,00</td>
+                        <td class="value-green">0,70</td>
+                    </tr>
+                    <tr>
+                        <td>Limpeza/Áreas Comuns</td>
+                        <td>92,00</td>
+                        <td class="value-neutral">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Bar Al-Bar</td>
+                        <td>90,60</td>
+                        <td class="value-green">0,30</td>
+                    </tr>
+                    <tr>
+                        <td>Rooftop Bar</td>
+                        <td>91,40</td>
+                        <td class="value-green">0,40</td>
+                    </tr>
+                    <tr>
+                        <td>Bar da Piscina</td>
+                        <td>89,80</td>
+                        <td class="value-green">0,70</td>
+                    </tr>
+                    <tr>
+                        <td>Animação</td>
+                        <td>87,25</td>
+                        <td class="value-neutral">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Sala/Restaurante</td>
+                        <td>90,15</td>
+                        <td class="value-green">0,75</td>
+                    </tr>
+                    <tr>
+                        <td>Cozinha</td>
+                        <td>86,00</td>
+                        <td class="value-green">0,40</td>
+                    </tr>
+                    <tr>
+                        <td>SPA</td>
+                        <td>89,55</td>
+                        <td class="value-green">0,15</td>
+                    </tr>
+                    <tr>
+                        <td>Manutenção</td>
+                        <td>92,00</td>
+                        <td class="value-green">0,30</td>
+                    </tr>
+                    <tr>
+                        <td>Relações Públicas</td>
+                        <td>91,00</td>
+                        <td class="value-neutral">0,00</td>
+                    </tr>
+                    <tr>
+                        <td>Vigilantes</td>
+                        <td>89,40</td>
+                        <td class="value-neutral">0,00</td>
+                    </tr>
+                    <tr class="footer-row">
+                        <td>Global</td>
+                        <td>92,50</td>
+                        <td class="value-green">0,50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="compras_page_2.html" class="nav-btn">⬅ Prev</a>
+        <a href="compras_overview.html" class="nav-btn">🏠 Home</a>
+        <!-- Next is disabled for now, but could be page 4 -->
+        <a href="compras_page_4.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>

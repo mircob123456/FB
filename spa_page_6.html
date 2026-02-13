@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slide 6 - Satisfação do Hóspede</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0F7178;
+            --secondary-cyan: #46B3C6;
+            --accent-gold: #FDB813;
+            --text-dark: #293541;
+            --bg-light: #F4F9FA;
+            --card-bg: #FFFFFF;
+            --table-header-bg: #cbb57b;
+            /* Gold/Brown */
+            --table-header-text: #FFFFFF;
+            --table-border: #e2e8f0;
+            --cell-yellow: #ffff00;
+            /* Bright yellow from image */
+            --cell-green-text: #00b050;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-teal);
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .section-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(15, 113, 120, 0.1);
+            border: 1px solid rgba(15, 113, 120, 0.05);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        table {
+            width: 100%;
+            max-width: 900px;
+            border-collapse: collapse;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+
+        /* Top Headers */
+        thead th {
+            background-color: var(--table-header-bg);
+            color: white;
+            padding: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid white;
+        }
+
+        /* Sub-headers */
+        .sub-header th {
+            background-color: white;
+            color: #bfa05f;
+            /* Gold text */
+            padding: 10px;
+            font-weight: 700;
+            border: 1px solid #ddd;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        tbody td {
+            padding: 12px;
+            border: 1px solid #eee;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        /* Specific Styles */
+        .category-header {
+            text-align: left;
+            padding-left: 20px;
+            color: #cbb57b;
+            /* Gold text */
+            background-color: #fdfaf2;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .item-label {
+            text-align: left;
+            padding-left: 20px;
+            font-weight: 600;
+        }
+
+        .yellow-bg {
+            background-color: var(--cell-yellow) !important;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .green-text {
+            color: var(--cell-green-text);
+            font-weight: 700;
+        }
+
+        .bold-black {
+            color: #000;
+            font-weight: 700;
+        }
+
+        /* Navigation Styles */
+        .nav-container {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            background: var(--primary-teal);
+            padding: 12px 28px;
+            border-radius: 50px;
+            box-shadow: 0 8px 24px rgba(15, 113, 120, 0.3);
+            z-index: 1000;
+            align-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            color: #FFFFFF;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:hover {
+            color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Satisfação do Hóspede <span style="font-size:1rem; color:#94a3b8; vertical-align:middle;">(Spa)</span></h1>
+
+    <div class="container">
+
+        <div class="section-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 40%; text-align:left; padding-left:20px;">INQUÉRITO DE SATISFAÇÃO</th>
+                        <th style="width: 20%;">Decisão</th>
+                        <th colspan="2" style="width: 40%;">Variação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="sub-header">
+                        <th style="text-align:left; border:none;"></th>
+                        <th>Objectivo 2026 -<br>Proposta</th>
+                        <th>Real 25<br>vs Objetivo</th>
+                        <th>Objetivo<br>2025</th>
+                    </tr>
+
+                    <!-- Category 1 -->
+                    <tr>
+                        <td colspan="4" class="category-header">SPA & FITNESS CENTER</td>
+                    </tr>
+                    <tr>
+                        <td class="item-label">SPA - Serviço -80%</td>
+                        <td class="yellow-bg">90,00</td>
+                        <td class="green-text">1,17</td>
+                        <td class="bold-black">89,50</td>
+                    </tr>
+                    <tr>
+                        <td class="item-label">SPA - Instalações -10%</td>
+                        <td class="yellow-bg">90,00</td>
+                        <td class="green-text">0,79</td>
+                        <td class="bold-black">90,00</td>
+                    </tr>
+                    <tr>
+                        <td class="item-label">Fitness Center -10%</td>
+                        <td class="yellow-bg">85,50</td>
+                        <td class="green-text">0,43</td>
+                        <td class="bold-black">85,50</td>
+                    </tr>
+
+                    <!-- Category 2 -->
+                    <tr>
+                        <td colspan="4" class="category-header">GLOBAL</td>
+                    </tr>
+                    <tr>
+                        <td class="item-label">Relação Qualidade-Preço</td>
+                        <td class="yellow-bg">85,00</td>
+                        <td class="green-text">0,78</td>
+                        <td class="bold-black">85,00</td>
+                    </tr>
+                    <tr>
+                        <td class="item-label">O Nosso Pessoal</td>
+                        <td class="yellow-bg">92,50</td>
+                        <td class="green-text">2,96</td>
+                        <td class="bold-black">92,00</td>
+                    </tr>
+                    <tr>
+                        <td class="item-label">Voltaria a escolher</td>
+                        <td class="yellow-bg">85,00</td>
+                        <td class="green-text">0,58</td>
+                        <td class="bold-black">85,00</td>
+                    </tr>
+                    <tr>
+                        <td class="item-label">Recomendava a amigo</td>
+                        <td class="yellow-bg">89,00</td>
+                        <td class="green-text">89,61</td>
+                        <td class="yellow-bg"></td>
+                        <!-- Empty/Yellow as per image? Or maybe just empty? Image shows yellow block partly cut off. Assuming empty yellow or value missing. -->
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <!-- Navigation Bar -->
+    <div class="nav-container">
+        <a href="spa_page_5.html" class="nav-btn">⬅ Prev</a>
+        <a href="spa_overview.html" class="nav-btn">🏠 Home</a>
+        <a href="spa_page_7.html" class="nav-btn">Next ➡</a>
+    </div>
+
+</body>
+
+</html>
